@@ -29,8 +29,8 @@ const apiFetch = async (searchTerm) => {
 //Light Toggle Function
 
 function changeShade() {
-  let grey = document.getElementById("rangeGrey").value;
-
+  let grey = document.getElementsByClassName("rangeGrey")[0].value;
+  console.log(grey)
   let color = "rgb(" + grey + "," + grey + "," + grey + ")";
 
   document.body.style.backgroundColor = color;
@@ -64,7 +64,7 @@ const App = () => {
 
       <label>grey:</label>
 
-      <input type="range" id="rangeGrey" defaultValue="128" min="0" max="255" onChange={() => changeShade() } />
+      <input type="range" class="rangeGrey" defaultValue="128" min="0" max="255" onChange={() => changeShade() } />
     </div>
   );
 };
